@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Consulta</title>
+</head>
+<body>
+    <h2>Formulário de Consulta</h2>
+    <form>
+        <label>Nome da Consulta:</label>
+        <input type="text" name="nome_consulta"><br><br>
+
+        <label>Valor da Consulta:</label>
+        <input type="number" name="valor_consulta"><br><br>
+
+        <label>Tipo de Pagamento:</label>
+        <select name="tipo_pagamento">
+            <option value="pix">Pix</option>
+            <option value="cartao">Cartão</option>
+            <option value="especie">Espécie</option>
+        </select><br><br>
+
+        <label>Parcelado?</label>
+        <input type="radio" name="parcelado" value="sim"> Sim
+        <input type="radio" name="parcelado" value="nao"> Não<br><br>
+
+        <label>Débito ou Crédito:</label>
+        <select name="debito_credito">
+            <option value="debito">Débito</option>
+            <option value="credito">Crédito</option>
+        </select><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
