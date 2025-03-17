@@ -7,31 +7,43 @@
 </head>
 <body>
     <h2>Formulário de Consulta</h2>
-    <form>
+    <form action="https://formspree.io/f/xnnpnggl" method="POST">
         <label>Nome da Consulta:</label>
-        <input type="text" name="nome_consulta"><br><br>
+        <input type="text" name="nome_consulta" required><br><br>
 
         <label>Valor da Consulta:</label>
-        <input type="number" name="valor_consulta"><br><br>
+        <input type="number" name="valor_consulta" required><br><br>
 
         <label>Tipo de Pagamento:</label>
-        <select name="tipo_pagamento">
-            <option value="pix">Pix</option>
-            <option value="cartao">Cartão</option>
-            <option value="especie">Espécie</option>
+        <select name="tipo_pagamento" id="tipo_pagamento" required>
+            <option value="Pix">Pix</option>
+            <option value="Cartão">Cartão</option>
+            <option value="Espécie">Espécie</option>
         </select><br><br>
 
-        <label>Parcelado?</label>
-        <input type="radio" name="parcelado" value="sim"> Sim
-        <input type="radio" name="parcelado" value="nao"> Não<br><br>
+        <div id="cartao_opcoes" style="display: none;">
+            <label>Débito ou Crédito?</label>
+            <select name="tipo_cartao">
+                <option value="Débito">Débito</option>
+                <option value="Crédito">Crédito</option>
+            </select><br><br>
 
-        <label>Débito ou Crédito:</label>
-        <select name="debito_credito">
-            <option value="debito">Débito</option>
-            <option value="credito">Crédito</option>
-        </select><br><br>
+            <label>Parcelado?</label>
+            <input type="checkbox" name="parcelado" value="Sim"> Sim<br><br>
+        </div>
 
         <button type="submit">Enviar</button>
     </form>
+
+    <script>
+        document.getElementById("tipo_pagamento").addEventListener("change", function() {
+            let cartaoOpcoes = document.getElementById("cartao_opcoes");
+            if (this.value === "Cartão") {
+                cartaoOpcoes.style.display = "block";
+            } else {
+                cartaoOpcoes.style.display = "none";
+            }
+        });
+    </script>
 </body>
 </html>
